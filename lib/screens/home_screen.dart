@@ -21,12 +21,12 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                    height: 210,
+                    height: 210.h,
                     child: Column(
                       children: [
                         Container(
-                          height: 150,
-                          width: 150,
+                          height: 150.h,
+                          width: 150.w,
                           child: Image.asset(
                             'assets/images/profileImage.png',
                             fit: BoxFit.cover,
