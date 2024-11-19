@@ -7,6 +7,8 @@ import 'package:food_hub/reuseable_components/featured_resturant_item.dart';
 import 'package:badges/badges.dart' as badges;
 
 import 'package:food_hub/reuseable_components/tab_buttons.dart';
+import 'package:food_hub/screens/category_screen.dart';
+import 'package:food_hub/screens/food_details_screen.dart';
 import 'package:food_hub/utils/constant_colors.dart';
 import 'package:food_hub/screens/home_screen.dart';
 class AdvanceDrawerComponent extends StatefulWidget {
@@ -119,7 +121,7 @@ class _AdvanceDrawerComponentState extends State<AdvanceDrawerComponent> {
                     height: 20.h,
                   ),
                   Text(
-                    'What wouldu like\n to order',
+                    'What would you like\n to order',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 30,
@@ -184,6 +186,9 @@ class _AdvanceDrawerComponentState extends State<AdvanceDrawerComponent> {
                             onTap: () {
                               setState(() {
                                 selectedIndex = index;
+                                if(selectedIndex == 2){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>CategoryScreen()));
+                                }
                               });
                             });
                       })),
@@ -211,20 +216,25 @@ class _AdvanceDrawerComponentState extends State<AdvanceDrawerComponent> {
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        FeaturedResturantContainer(
-                          backgroundimage: 'assets/images/cheezious.png',
-                          text: 'Cheezy and Crispy',
-                        ),
-                        SizedBox(
-                          width: 10.sp,
-                        ),
-                        FeaturedResturantContainer(
-                          backgroundimage: 'assets/images/cheezious.png',
-                          text: 'Cheezious',
-                        ),
-                      ],
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>FoodDetailsScreen()));
+                      },
+                      child: Row(
+                        children: [
+                          FeaturedResturantContainer(
+                            backgroundimage: 'assets/images/cheezious.png',
+                            text: 'Cheezy and Crispy',
+                          ),
+                          SizedBox(
+                            width: 10.sp,
+                          ),
+                          FeaturedResturantContainer(
+                            backgroundimage: 'assets/images/cheezious.png',
+                            text: 'Cheezious',
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -239,23 +249,28 @@ class _AdvanceDrawerComponentState extends State<AdvanceDrawerComponent> {
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal
                     ,
-                    child: Row(
-                      children: [
-                        FeaturedResturantItem(
-                            backGroundImage: 'assets/images/cheezious.png',
-                        text: '\$ 6',
-                        ),
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>FoodDetailsScreen()));
+                      },
+                      child: Row(
+                        children: [
+                          FeaturedResturantItem(
+                              backGroundImage: 'assets/images/cheezious.png',
+                          text: '\$ 6',
+                          ),
 
-                        SizedBox(width: 10.sp,),
-                        FeaturedResturantItem(
-                            backGroundImage: 'assets/images/cheezious.png',
-                        text: '\$ 7.5',
-                        ),
-                        SizedBox(width: 10.sp,),
-                        FeaturedResturantItem(backGroundImage: 'assets/images/cheezious.png',
-                        text: '\$ 3',
-                        )
-                      ],
+                          SizedBox(width: 10.sp,),
+                          FeaturedResturantItem(
+                              backGroundImage: 'assets/images/cheezious.png',
+                          text: '\$ 7.5',
+                          ),
+                          SizedBox(width: 10.sp,),
+                          FeaturedResturantItem(backGroundImage: 'assets/images/cheezious.png',
+                          text: '\$ 3',
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   // SizedBox(height: 80.sp,),

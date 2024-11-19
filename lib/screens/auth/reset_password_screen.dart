@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_hub/reuseable_components/custom_button.dart';
 import 'package:food_hub/reuseable_components/textfield_component.dart';
+import 'package:food_hub/screens/auth/verificationCode_screen.dart';
 import 'package:food_hub/utils/constant_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/reuseable_components/custom_backButton.dart';
@@ -59,7 +60,12 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   ),
 TextfieldComponent(titleText: 'E-mail', hinttext: 'email'),
                   SizedBox(height: 30.h,),
-                 CustomButton(buttonText: 'See New Password')
+                 GestureDetector(
+                     onTap: (){
+
+                       Navigator.push(context, MaterialPageRoute(builder: (context)=>VerificationcodeScreen()));
+                     },
+                     child: CustomButton(buttonText: 'See New Password'))
 
                 ],
               ),

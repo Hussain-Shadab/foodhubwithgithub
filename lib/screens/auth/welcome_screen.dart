@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/reuseable_components/facebook_google_login.dart';
+import 'package:food_hub/screens/auth/login_screen.dart';
+import 'package:food_hub/screens/auth/signup_screen.dart';
 import 'package:food_hub/utils/constant_colors.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -155,7 +157,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         style: TextStyle(fontSize: 18.sp,color: AppColors.whiteColor),
                       ),
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
+                          },
                           child: Text(
                             'SignIn',
                             style: TextStyle(color:AppColors.whiteColor, fontSize: 18.sp),

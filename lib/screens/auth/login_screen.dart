@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:food_hub/drawer/advance_drawer_component.dart';
+import 'package:food_hub/reuseable_components/constant/customTextWidget.dart';
 import 'package:food_hub/reuseable_components/custom_backButton.dart';
 import 'package:food_hub/reuseable_components/custom_styled_container.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/reuseable_components/custom_button.dart';
 import 'package:food_hub/reuseable_components/facebook_google_login.dart';
 import 'package:food_hub/reuseable_components/textfield_component.dart';
+import 'package:food_hub/screens/auth/reset_password_screen.dart';
+import 'package:food_hub/screens/home_screen.dart';
 import 'package:food_hub/utils/constant_colors.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -53,10 +57,21 @@ class _LoginScreenState extends State<LoginScreen> {
                     isPassword: true,
                   ),
                   SizedBox(
-                    height: 20.h,
+                    height: 10.h,
                   ),
-                  CustomButton(
-                    buttonText: 'Sign Up',
+                  Center(child: InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ResetPasswordScreen()));
+                      },
+                      child: Customtextwidget(text: 'Forget Password?',color: AppColors.buttonColor,fontSize: 15.sp,))),
+                  SizedBox(height: 15.h,),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AdvanceDrawerComponent()));
+                    },
+                    child: CustomButton(
+                      buttonText: 'Login',
+                    ),
                   ),
                   SizedBox(height: 10.h,),
                   Row(

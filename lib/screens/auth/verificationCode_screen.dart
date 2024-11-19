@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/reuseable_components/custom_backButton.dart';
+import 'package:food_hub/reuseable_components/custom_button.dart';
 import 'package:food_hub/reuseable_components/custom_styled_container.dart';
+import 'package:food_hub/screens/auth/login_screen.dart';
+import 'package:food_hub/screens/auth/registration_screen.dart';
+import 'package:food_hub/screens/auth/reset_password_screen.dart';
 import 'package:food_hub/utils/constant_colors.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -105,11 +109,21 @@ activeBorderWidth: 1,
                     ],
                   ),
 SizedBox(height: 15.h,),
+                  GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                      },
+                      child: CustomButton(buttonText: 'Verified')),
+                  SizedBox(height: 10.h,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Dont have an account!',style: TextStyle(color: AppColors.accountTextColor,fontSize: 16.sp),),
-                      TextButton(onPressed: (){}, child: Text('Please resend',style: TextStyle(color: AppColors.buttonColor,fontSize: 16.sp),))
+                      TextButton(onPressed: (){}, child: InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>RegistrationScreen()));
+                          },
+                          child: Text('Please resend',style: TextStyle(color: AppColors.buttonColor,fontSize: 16.sp),)))
                     ],
                   )
 

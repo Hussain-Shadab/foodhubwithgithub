@@ -6,11 +6,15 @@ import 'package:food_hub/reuseable_components/constant/customTextWidget.dart';
 import 'package:food_hub/utils/constant_colors.dart';
 class FeaturedResturantItem extends StatefulWidget {
   final String backGroundImage;
-  final String text;
+  final String? text;
+  final double? height;
+  final double? width;
   const FeaturedResturantItem({
     Key ? key,
     required this.backGroundImage,
-    required this.text,
+     this.text,
+    this.height,
+    this.width,
 }) : super(key: key);
 
   @override
@@ -22,13 +26,13 @@ class _FeaturedResturantItemState extends State<FeaturedResturantItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 100.h,
-        width: 165.w,
+        height: widget.height??100.h,
+        width: widget.width??165.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           image: DecorationImage(
               alignment: Alignment.topCenter,
-             image: AssetImage(widget.backGroundImage),
+             image: AssetImage(widget.backGroundImage,),
               fit: BoxFit.cover
           ),
 
@@ -50,7 +54,7 @@ class _FeaturedResturantItemState extends State<FeaturedResturantItem> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Customtextwidget(text: widget.text,color: AppColors.buttonColor,fontSize: 20,),
+                  Customtextwidget(text: widget.text??'text',color: AppColors.buttonColor,fontSize: 20,),
                   // Customtextwidget(text: widget.text,
                   //   fontWeight: FontWeight.bold,
                   //   fontSize: 20.sp,

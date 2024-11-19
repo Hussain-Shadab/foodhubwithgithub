@@ -1,6 +1,7 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:food_hub/reuseable_components/custom_button.dart';
+import 'package:food_hub/screens/auth/verificationCode_screen.dart';
 import 'package:food_hub/utils/constant_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_hub/reuseable_components/custom_backButton.dart';
@@ -136,7 +137,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     Text('Phone Number $phoneNumber'),
 
                     SizedBox(height: 30.h),
-                    CustomButton(buttonText: 'Send'),
+                    GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>VerificationcodeScreen()));
+                        },
+                        child: CustomButton(buttonText: 'Check Verification Code')),
                   ],
                 ),
               )

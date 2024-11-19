@@ -4,6 +4,8 @@ import 'package:food_hub/reuseable_components/custom_button.dart';
 import 'package:food_hub/reuseable_components/custom_styled_container.dart';
 import 'package:food_hub/reuseable_components/facebook_google_login.dart';
 import 'package:food_hub/reuseable_components/textfield_component.dart';
+import 'package:food_hub/screens/auth/login_screen.dart';
+import 'package:food_hub/screens/auth/registration_screen.dart';
 import 'package:food_hub/utils/constant_colors.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -44,8 +46,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     isPassword: true,
                   ),
         SizedBox(height: 20.h,),
-        CustomButton(
-          buttonText: 'Sign Up',
+        GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>RegistrationScreen()));
+          },
+          child: CustomButton(
+            buttonText: 'Sign Up',
+          ),
         ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
