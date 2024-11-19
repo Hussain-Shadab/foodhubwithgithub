@@ -8,46 +8,52 @@ import 'package:food_hub/utils/constant_colors.dart';
 class SlideButton extends StatelessWidget {
   final bool isSelected;
   final VoidCallback onTap;
+  final int selectedIndex;
   const SlideButton({
     Key ? key,
     this.isSelected= false,
-required this.onTap
+required this.onTap,
+    this.selectedIndex = 0
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-     onTap: onTap,
-      child: Container(
-        height: 55.h,
-        width: double.infinity,
-        decoration: BoxDecoration(
-      border: Border.all(color: AppColors.enabledBorder),
-          borderRadius: BorderRadius.circular(40.sp)
+    return Container(
+      height: 55.h,
+      width: double.infinity,
+      decoration: BoxDecoration(
+    border: Border.all(color: AppColors.enabledBorder),
+        borderRadius: BorderRadius.circular(40.sp)
 
-        ),
-        child: Padding(
-          padding:  EdgeInsets.only(left: 3.sp,top: 3.sp,bottom: 3.sp,right: 3.sp),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
+      ),
+      child: Padding(
+        padding:  EdgeInsets.all(3.sp),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            GestureDetector(
+              onTap: onTap,
+              child: Container(
                   width: 156.w,
                   child: CustomButton(buttonText: 'Upcoming',
                     backGroundColor:  isSelected ? AppColors.buttonColor : AppColors.whiteColor,
                     textColor: isSelected ? AppColors.whiteColor : AppColors.buttonColor,
 
                   )),
-              // Spacer(),
-              Container(
+            ),
+
+            GestureDetector(
+              onTap: onTap,
+              child: Container(
                   width: 156.w,
+
                   child: CustomButton(buttonText: 'History',
-                    backGroundColor:  isSelected ? AppColors.buttonColor : AppColors.whiteColor,
-                    textColor: isSelected ? AppColors.whiteColor : AppColors.buttonColor,
+                    backGroundColor:  isSelected ? AppColors.whiteColor : AppColors.buttonColor,
+                    textColor: isSelected ? AppColors.buttonColor : AppColors.whiteColor,
 
                   )),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

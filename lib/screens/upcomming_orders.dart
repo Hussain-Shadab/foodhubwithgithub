@@ -49,6 +49,44 @@ class _UpcommingOrdersState extends State<UpcommingOrders> {
               isSelected: isSelected,
               onTap: toggleButtons,
             ),
+            SizedBox(height: 15.h,),
+            Container(
+              height: 238.h,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.sp),
+// color: AppColors.whiteColor.withOpacity(0.8),
+boxShadow: [
+  BoxShadow(
+    color: Colors.white38.withOpacity(1),
+    spreadRadius: 3.sp,
+    blurRadius: 5.sp,
+    offset: Offset(3, 3)
+  )
+]
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          height: 65.h,
+                          width: 65.w,
+                         child: Image.asset('assets/images/star-buck.png',)
+                        ),
+                        Column(
+                          children: [
+                            Customtextwidget(text: text)
+                          ],
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
