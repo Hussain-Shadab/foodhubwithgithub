@@ -22,4 +22,5 @@ class AppColors {
   static const Color ratingStarColor = Color(0xffFFC529);
   static const Color verifiedContainerColor = Color(0xff029094);
   static const Color cheeziousItemsContainerColor = Color(0xff8A8E9B);
+  static const Color orderedTextC = Color(0xff4EE476);
 }
