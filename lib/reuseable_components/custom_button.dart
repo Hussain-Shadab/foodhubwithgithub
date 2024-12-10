@@ -4,7 +4,7 @@ import 'package:food_hub/utils/constant_colors.dart';
 
 class CustomButton extends StatefulWidget {
   final String buttonText;
-  final Color backGroundColor;
+  final Color? backGroundColor;
   final Color textColor;
   const CustomButton(
       {Key? key,

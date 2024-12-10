@@ -74,7 +74,7 @@ class _TextfieldComponentState extends State<TextfieldComponent> {
                   focusedBorder: OutlineInputBorder(
                     borderSide:
                         BorderSide(width: 0.9.w, color: AppColors.buttonColor),
-                  )),
+                  )  ),
             ),
           )
         ],
