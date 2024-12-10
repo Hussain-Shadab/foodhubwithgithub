@@ -77,7 +77,7 @@ class _DeliveredOrdersState extends State<DeliveredOrders> {
                     Row(
                       children: [
                         Customtextwidget(
-                          text: 'Jimmy Jons',
+                          text: 'Jimmy Jons\'s',
                           fontSize: 20.sp,
                           fontWeight: FontWeight.bold,
                           color: AppColors.blackColor,
@@ -130,7 +130,7 @@ decoration: BoxDecoration(
 Customtextwidget(text: '3 items',fontSize: 14.sp,color: AppColors.titleColorOfTextFormField,),
                 // Spacer(),
                 Customtextwidget(
-                  text: '#232435',
+                  text: '\$17',
                   fontSize: 16.sp,
                   color: AppColors.buttonColor,
                 )
@@ -149,12 +149,12 @@ Customtextwidget(text: '3 items',fontSize: 14.sp,color: AppColors.titleColorOfTe
                   height:43.h,
                   width: 135.w,
 
-                  child: CustomButton(buttonText: 'Cancel',backGroundColor: AppColors.whiteColor,textColor: AppColors.blackColor,)),
+                  child: CustomButton(buttonText: 'Rate',backGroundColor: AppColors.whiteColor,textColor: AppColors.blackColor,)),
               Container(
                   height:43.h,
                   width: 135.w,
 
-                  child: CustomButton(buttonText: 'Track Order',backGroundColor: AppColors.buttonColor,textColor: AppColors.whiteColor,)),
+                  child: CustomButton(buttonText: 'Re-Order',backGroundColor: AppColors.buttonColor,textColor: AppColors.whiteColor,)),
             ],
           )
         ],

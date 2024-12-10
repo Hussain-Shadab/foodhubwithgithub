@@ -29,7 +29,7 @@ class _FeaturedResturantItemState extends State<FeaturedResturantItem> {
         height: widget.height??100.h,
         width: widget.width??165.w,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(22.sp),
           image: DecorationImage(
               alignment: Alignment.topCenter,
              image: AssetImage(widget.backGroundImage,),

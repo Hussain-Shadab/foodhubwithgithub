@@ -9,10 +9,12 @@ class SlideButton extends StatelessWidget {
   final bool isSelected;
   final VoidCallback onTap;
   final int selectedIndex;
+  final String text;
   const SlideButton({
     Key ? key,
     this.isSelected= false,
 required this.onTap,
+    this.text='text',
     this.selectedIndex = 0
   }) : super(key: key);
 
@@ -35,7 +37,7 @@ required this.onTap,
               onTap: onTap,
               child: Container(
                   width: 156.w,
-                  child: CustomButton(buttonText: 'Upcoming',
+                  child: CustomButton(buttonText: text,
                     backGroundColor:  isSelected ? AppColors.buttonColor : AppColors.whiteColor,
                     textColor: isSelected ? AppColors.whiteColor : AppColors.buttonColor,
 
@@ -47,7 +49,7 @@ required this.onTap,
               child: Container(
                   width: 156.w,
 
-                  child: CustomButton(buttonText: 'History',
+                  child: CustomButton(buttonText: text,
                     backGroundColor:  isSelected ? AppColors.whiteColor : AppColors.buttonColor,
                     textColor: isSelected ? AppColors.buttonColor : AppColors.whiteColor,
 
