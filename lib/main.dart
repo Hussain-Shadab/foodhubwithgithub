@@ -9,6 +9,7 @@ import 'package:food_hub/screens/category_screen.dart';
 import 'package:food_hub/screens/favorites_food_items_screen.dart';
 import 'package:food_hub/screens/food_details_screen.dart';
 import 'package:food_hub/screens/rating_screen.dart';
+import 'package:food_hub/screens/review_screen.dart';
 import 'package:food_hub/screens/splash_screen.dart';
 import 'package:food_hub/screens/upcomming_orders.dart';
 
@@ -34,7 +35,7 @@ class _MyAppState extends State<MyApp> {
         return MaterialApp(
 
             debugShowCheckedModeBanner: false,
-            home: RatingScreen(),
+            home: ReviewScreen(),
         );
       },
 
